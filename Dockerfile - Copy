@@ -1,0 +1,9 @@
+#base image
+FROM node:alpine
+WORKDIR '/app'
+COPY package.json .
+COPY . .
+#dependencies
+RUN npm install
+#command to run in container
+CMD ["npm","start"]
